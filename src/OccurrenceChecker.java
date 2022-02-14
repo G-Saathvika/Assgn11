@@ -15,7 +15,7 @@ public class OccurrenceChecker {
         try{
             BufferedReader reader = new BufferedReader(new FileReader(filename));
 
-            //PrintWriter pw = new PrintWriter("output.txt");
+            PrintWriter pw = new PrintWriter("output.txt");
 
             int ch=0;
             while((ch=reader.read())!=-1){
@@ -28,15 +28,15 @@ public class OccurrenceChecker {
                 }
             }
 
-            for(Map.Entry<Character,Integer> e:charCount.entrySet()){
-                System.out.println(e.getKey()+" "+e.getValue());
-            }
-//            for(Map.Entry<Integer,Integer> e:charCount.entrySet()){
-//                pw.println(e.getKey()+" "+e.getValue());
+//            for(Map.Entry<Character,Integer> e:charCount.entrySet()){
+//                System.out.println(e.getKey()+" "+e.getValue());
 //            }
+            for(Map.Entry<Character,Integer> e:charCount.entrySet()){
+                pw.println(e.getKey()+" "+e.getValue());
+              }
 
             reader.close();
-            //pw.close();
+            pw.close();
         }
         catch (IOException e) {
             e.printStackTrace();
